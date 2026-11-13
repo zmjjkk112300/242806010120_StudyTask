@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card narrow">
+  <h2>{{ '编辑任务' if mode == 'edit' else '新建任务' }}</h2>
+  <form method="post"
+        action="{{ url_for('tasks.edit_task', task_id=task_id) if mode == 'edit' else url_for('tasks.new_task') }}">
+    <label>任务名称 <span class="req">*</span>
+      <input type="text" name="name" maxlength="100" value="{{ values.name or '' }}" required>
+    </label>
+    <label>所属课程 <span class="req">*</span>
+      <input type="text" name="course" maxlength="60" value="{{ values.course or '' }}" required>
+    </label>
+    <label>任务描述
+      <textarea name="description" maxlength="1000" rows="4">{{ values.description or '' }}</textarea>
+    </label>
+    <label>截止日期 <span class="req">*</span>
+      <input type="date" name="due_at" value="{{ values.due_at or '' }}" required>
+    </label>
+    <div class="row-2">
+      <label>优先级
+        <select name="priority">
+          {% for p in priorities %}
+          <option value="{{ p }}" {% if values.priority == p %}selected{% endif %}>{{ p }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>状态
+        <select name="status">
+          {% for s in statuses %}
+          <option value="{{ s }}" {% if values.status == s %}selected{% endif %}>{{ s }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
+    <div class="form-actions">
+      <button type="submit">{{ '保存修改' if mode == 'edit' else '创建任务' }}</button>
+      <a class="btn ghost" href="{{ url_for('tasks.index') }}">返回列表</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
