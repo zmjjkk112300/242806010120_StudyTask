@@ -24,8 +24,10 @@ StudyTask/
 │   ├── conftest.py        # 测试夹具（临时数据库）
 │   └── test_tasks.py      # T1—T10 验收用例 + 校验边界测试
 ├── docs/
-│   └── 验收表.md          # 需求验收记录（T1—T10）
+│   ├── 验收表.md          # 需求验收记录（T1—T10）
+│   └── screenshots/       # 运行界面截图
 ├── instance/             # 运行时 SQLite 数据库（自动生成，已忽略）
+├── seed_demo.py          # 可选：写入演示样例任务
 ├── run.py                # 启动入口
 ├── requirements.txt       # Python 依赖
 ├── pytest.ini
@@ -51,7 +53,15 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### 3. 启动应用
+### 3. （可选）写入演示样例任务
+
+```powershell
+python seed_demo.py
+```
+
+仅在数据库为空时写入 6 条演示任务，便于界面演示；不影响自动化测试。
+
+### 4. 启动应用
 
 ```powershell
 python run.py
@@ -59,7 +69,7 @@ python run.py
 
 浏览器访问 <http://127.0.0.1:5000> 即可使用。数据库文件自动生成在 `instance/tasks.db`。
 
-### 4. 运行自动化测试
+### 5. 运行自动化测试
 
 ```powershell
 python -m pytest -q

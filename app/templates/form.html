@@ -20,7 +20,7 @@
       <label>优先级
         <select name="priority">
           {% for p in priorities %}
-          <option value="{{ p }}" {% if values.priority == p %}selected{% endif %}>{{ p }}</option>
+          <option value="{{ p }}" {% if values.priority == p or (not values.priority and p == '中') %}selected{% endif %}>{{ p }}</option>
           {% endfor %}
         </select>
       </label>
