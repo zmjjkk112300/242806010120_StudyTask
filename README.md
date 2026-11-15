@@ -32,6 +32,7 @@ StudyTask/
 ├── requirements.txt       # Python 依赖
 ├── pytest.ini
 ├── AI_DEV_LOG.md         # AI 协作过程记录
+├── 提交与部署指南.md      # 建仓库、推送、部署、回填信息的操作步骤
 └── README.md
 ```
 
