@@ -110,7 +110,7 @@ python -m pytest -q
 - 方式一：云服务器（如阿里云 / 腾讯云轻量服务器）安装 Python 与依赖，`gunicorn` 或 `python run.py` 启动，Nginx 反向代理 5000 端口。
 - 方式二：PaaS 平台（Render / Railway / 国内云托管）导入仓库，启动命令 `python run.py`，指定端口由平台环境变量注入。
 
-> 部署访问地址：**（待部署后填写）**
+> 部署访问地址：**http://47.106.160.76/**（阿里云 ECS，Ubuntu 24.04 + Gunicorn + systemd，已实测公网可访问）
 > 代码仓库地址：**https://github.com/zmjjkk112300/242806010120_StudyTask**
 
 ## 七、已知限制
