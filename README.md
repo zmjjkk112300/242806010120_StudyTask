@@ -28,6 +28,7 @@ StudyTask/
 │   └── screenshots/       # 运行界面截图
 ├── instance/             # 运行时 SQLite 数据库（自动生成，已忽略）
 ├── seed_demo.py          # 可选：写入演示样例任务
+├── 启动.bat               # Windows 双击启动（自动装依赖 → 写演示数据 → 起服务）
 ├── run.py                # 启动入口
 ├── requirements.txt       # Python 依赖
 ├── pytest.ini
@@ -64,7 +65,12 @@ python seed_demo.py
 
 ### 4. 启动应用
 
+**方式一（推荐，Windows）**：在项目文件夹内双击 `启动.bat`，它会自动安装依赖、写入演示数据并启动服务。
+
+**方式二（命令行）**：**必须先进入项目目录**再执行命令，否则会报 `No such file or directory: 'requirements.txt'`。
+
 ```powershell
+cd 你的项目路径\StudyTask
 python run.py
 ```
 
