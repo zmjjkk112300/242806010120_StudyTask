@@ -13,3 +13,6 @@ instance/
 # IDE
 .vscode/
 .idea/
+
+# 部署辅助二进制（不入库）
+cloudflared.exe
